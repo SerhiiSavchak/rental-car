@@ -1,0 +1,10 @@
+:root {
+  --main-black: #121417;
+  --main-white: #fff;
+  --main-blue: #3470ff;
+  --blue: #0b44cd;
+  --main-gray: #8a8a89;
+  --main-bg-gray: #f7f7fb;
+  --dropdown-gray: rgba(18, 20, 23, 0.2);
+  --gray: rgba(18, 20, 23, 0.5);
+}
