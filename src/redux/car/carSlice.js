@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCars } from './carOperations';
-const contactsInitialState = { cars: [], isLoading: false, error: null };
+const contactsInitialState = {
+  cars: [],
+
+  isLoading: false,
+  error: null,
+};
 
 const carSlice = createSlice({
   // Имя слайса

@@ -1,5 +1,11 @@
 @import-normalize; /* bring in normalize.css styles */
 
+/* ========================= Variables ========================= */
+
+@import url('./variables.css');
+
+/* ========================= Variables ========================= */
+
 /* ========================= Reset styles ========================= */
 html,
 body,
@@ -152,6 +158,11 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 select::-ms-expand {

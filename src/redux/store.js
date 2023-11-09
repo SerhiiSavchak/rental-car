@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { favoriteReducer } from './favorite/favoriteSlice';
+import { filterReducer } from './filter/filterSlice';
 import { carReducer } from './car/carSlice';
 import {
   persistStore,
@@ -23,6 +24,7 @@ const persistedReducer = persistReducer(persistConfig, favoriteReducer);
 export const store = configureStore({
   reducer: {
     cars: carReducer,
+    filter: filterReducer,
     favorite: persistedReducer,
   },
   middleware: getDefaultMiddleware =>

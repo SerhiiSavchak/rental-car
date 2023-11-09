@@ -2,7 +2,7 @@ import css from './Layout.module.css';
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
 import { Navigation } from '../Navigation/Navigation';
-import { Container } from '../Container/Container';
+import { Container } from '../common/Container/Container';
 
 export const Layout = () => {
   return (
@@ -12,9 +12,8 @@ export const Layout = () => {
           <Navigation />
         </Container>
       </Header>
-      <Container>
-        <Outlet />
-      </Container>
+
+      <Outlet />
     </>
   );
 };
