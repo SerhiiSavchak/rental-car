@@ -3,7 +3,6 @@
 }
 .welcomeTitle {
   color: var(--main-black);
-
   margin: 0 auto;
   font-size: 52px;
   width: fit-content;
@@ -12,9 +11,10 @@
   line-height: 111.1%;
   margin-bottom: 24px;
 }
+
 .welcomeTopText,
 .welcomeText,
-.welcomeBottomText {
+.welcomeBottomLink {
   color: var(--main-black);
   font-family: Montserrat;
   margin: 0 auto;
@@ -24,20 +24,25 @@
   font-weight: 500;
   line-height: 111.1%;
 }
+
 .welcomeTopText {
   margin-bottom: 24px;
 }
+
 .welcomeText {
   margin-bottom: 24px;
   font-weight: 600;
 }
-.welcomeBottomText {
+
+.welcomeBottomLink {
+  margin: 0 auto;
+  display: block;
   cursor: pointer;
   font-weight: 600;
   color: var(--main-blue);
   transition: color var(--cubic);
 }
 
-.welcomeBottomText:is(:hover, :focus) {
+.welcomeBottomLink:is(:hover, :focus) {
   color: var(--gray);
 }

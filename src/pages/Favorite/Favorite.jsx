@@ -1,5 +1,4 @@
 import css from './Favorite.module.css';
-
 import { Container } from 'components/common/Container/Container';
 import { CatalogList } from 'components/catalog/CatalogList/CatalogList';
 import { CatalogItem } from 'components/catalog/CatalogItem/CatalogItem';
@@ -12,16 +11,15 @@ import { useEffect } from 'react';
 export const Favorite = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCars(1));
+    dispatch(fetchCars({ limit: '' }));
   }, [dispatch]);
 
   const favoriteCars = useSelector(getFavoriteCars);
-
   const cars = useSelector(getCars);
   const filteredCars = cars.filter(car => favoriteCars.includes(car.id));
 
   return (
-    <section>
+    <section className={css.favoriteSection}>
       <Container>
         <CatalogList>
           {filteredCars.length !== 0 &&

@@ -1,6 +1,6 @@
 import css from './Navigation.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from 'images/icon-car.png';
+import logo from 'images/logo.png';
 export const Navigation = () => {
   const navigate = useNavigate();
   const handleClick = () => {

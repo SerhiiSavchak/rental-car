@@ -8,12 +8,13 @@ export const Button = ({
   padding,
   width,
   height,
+  margin,
 }) => {
   return (
     <button
       onClick={() => handleClick && handleClick(id)}
       className={css.btn}
-      style={{ padding, width, height }}
+      style={{ padding, width, height, margin }}
       type={type}
     >
       {text}

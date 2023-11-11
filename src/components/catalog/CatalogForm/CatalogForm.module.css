@@ -20,7 +20,6 @@
 .dropDownMakes,
 .dropDownPrices {
   height: 48px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,14 +72,11 @@
   margin-top: 4px;
   scroll-behavior: auto;
   border-radius: 14px;
-
   border: 1px solid rgba(18, 20, 23, 0.05);
   outline: none;
   overflow: hidden;
   overflow-y: scroll;
-
   background: #fff;
-
   box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
 }
 
@@ -99,9 +95,9 @@
 .dropDownMenu::-webkit-scrollbar-track {
   background: transparent;
   margin-top: 14px;
-
   margin-bottom: 14px;
 }
+
 .dropDownMenu::-webkit-scrollbar-thumb {
   height: 130px;
   background: rgba(18, 20, 23, 0.05);
@@ -117,6 +113,7 @@
   height: 20px;
   stroke: var(--main-black);
 }
+
 .iconArrowRotate {
   display: flex;
   justify-content: center;
@@ -133,7 +130,6 @@
   height: 48px;
   background-color: var(--main-bg-gray);
   color: var(--main-black);
-
   font-size: 16px;
 
   font-weight: 500;
@@ -145,6 +141,7 @@
   border-radius: 14px 0px 0px 14px;
   padding: 14px 14px 14px 75px;
 }
+
 .catalogInput:nth-child(3) {
   border-radius: 0px 14px 14px 0px;
   padding: 14px 14px 14px 55px;
@@ -159,7 +156,6 @@
   color: var(--main-black);
   position: absolute;
   font-size: 18px;
-
   font-weight: 500;
   line-height: 111.11%;
 }
@@ -168,6 +164,7 @@
   top: 14px;
   left: 24px;
 }
+
 .catalogInputText:last-child {
   top: 14px;
   right: 115px;

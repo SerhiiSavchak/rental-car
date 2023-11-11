@@ -4,30 +4,25 @@ import { deleteCurrentCar } from 'redux/car/carSlice';
 import sprite from 'images/icons/sprite.svg';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
+import { convertNum } from 'utils/numConverter';
+
 export const CarModal = ({ car, setIsShowModal }) => {
   const dispatch = useDispatch();
-  const rentalData = car.rentalConditions;
 
-  const convertNum = number => {
-    const num = String(number);
-    let result;
+  const onHandleClick = e => {
+    switch (e.target.id) {
+      case 'backdrop':
+        setIsShowModal(false);
+        dispatch(deleteCurrentCar());
 
-    switch (num.length) {
-      case 3:
-        result = `${num[0]},0${num[1]}${num[2]}`;
-        break;
-      case 4:
-        result = `${num[0]},${num[1]}${num[2]}${num[3]}`;
-
-        break;
-      case 5:
-        result = `${num[0]},${num[1]}${num[2]}${num[3]}${num[3]}`;
-        break;
+        return;
+      case 'close':
+        setIsShowModal(false);
+        dispatch(deleteCurrentCar());
+        return;
       default:
         return;
     }
-
-    return result;
   };
 
   useEffect(() => {
@@ -47,22 +42,6 @@ export const CarModal = ({ car, setIsShowModal }) => {
       window.removeEventListener('keydown', onEscKeyPress);
     };
   }, [setIsShowModal]);
-
-  const onHandleClick = e => {
-    switch (e.target.id) {
-      case 'backdrop':
-        setIsShowModal(false);
-        dispatch(deleteCurrentCar());
-
-        return;
-      case 'close':
-        setIsShowModal(false);
-        dispatch(deleteCurrentCar());
-        return;
-      default:
-        return;
-    }
-  };
 
   const modalRoot = document.querySelector('#modal-root');
   return createPortal(
@@ -144,20 +123,22 @@ export const CarModal = ({ car, setIsShowModal }) => {
             <ul className={css.modalBottomList}>
               <li className={css.modalBottomItem}>
                 <p className={css.modalBottomText}>
-                  {`${rentalData.split(' ')[0]} ${rentalData.split(' ')[1]} `}{' '}
-                  <span className={css.modalBottomSpan}>{`${rentalData
+                  {`${car.rentalConditions.split(' ')[0]} ${
+                    car.rentalConditions.split(' ')[1]
+                  } `}{' '}
+                  <span className={css.modalBottomSpan}>{`${car.rentalConditions
                     .split(' ')[2]
                     .slice(0, 2)}`}</span>
                 </p>
               </li>
               <li className={css.modalBottomItem}>
                 <p className={css.modalBottomText}>
-                  {rentalData.slice(15, 39)}
+                  {car.rentalConditions.slice(15, 39)}
                 </p>
               </li>
               <li className={css.modalBottomItem}>
                 <p className={css.modalBottomText}>
-                  {rentalData.slice(39, -1)}
+                  {car.rentalConditions.slice(39, -1)}
                 </p>
               </li>
               <li className={css.modalBottomItem}>
