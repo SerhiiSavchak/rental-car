@@ -1,0 +1,81 @@
+.catalogMainItem {
+  width: 274px;
+
+  position: relative;
+}
+.catalogImgWrap {
+  height: 268px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border-radius: 14px;
+}
+.catalogImg {
+  min-width: 401px;
+  min-height: 268px;
+  border-radius: 14px;
+
+  transform: translateX(-12%);
+}
+.catalogFavBtn {
+  z-index: 1;
+  position: absolute;
+  top: 14px;
+
+  background-color: transparent;
+  border: none;
+  right: 14px;
+}
+
+.catalogIcon {
+  width: 18px;
+
+  height: 18px;
+  stroke: var(--main-white);
+}
+
+.catalogThumb {
+}
+.catalogWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.catalogTitle,
+.catalogTopText {
+  color: var(--main-black);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+.catalogMakeSpan {
+  color: var(--main-blue);
+}
+.catalogSpan {
+}
+.catalogSpan:last-child {
+}
+.catalogTopText {
+}
+.catalogList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-bottom: 28px;
+  height: 40px;
+}
+.catalogItem {
+  border-right: 1px solid rgba(18, 20, 23, 0.1);
+  padding-right: 6px;
+}
+.catalogItem:last-child {
+  border-right: unset;
+}
+
+.catalogItemText {
+  color: var(--gray);
+
+  font-size: 12px;
+
+  font-weight: 400;
+  line-height: 150%;
+}

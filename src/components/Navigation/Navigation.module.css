@@ -1,0 +1,41 @@
+.headerNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerImg {
+  scale: 0.9;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: scale var(--cubic);
+}
+
+.headerImg:is(:hover, :focus) {
+  scale: 1.2;
+}
+
+.headerList {
+  display: flex;
+  gap: 50px;
+}
+.headerItem,
+.headerLink {
+  color: var(--main-black);
+
+  font-size: 18px;
+
+  font-weight: 500;
+  line-height: 111.1%;
+  transition: color var(--cubic);
+}
+
+.headerItem:is(:hover, :focus),
+.headerLink:is(:hover, :focus) {
+  color: var(--main-blue);
+}
+
+.headerLink {
+  font-weight: 400;
+}

@@ -188,6 +188,11 @@ select::-ms-expand {
   font-weight: 600;
   src: url('/assets/fonts/Manrope-SemiBold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  src: url('/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+}
 /* ========================= /Fonts ========================= */
 
 /* ========================= Common styles ========================= */

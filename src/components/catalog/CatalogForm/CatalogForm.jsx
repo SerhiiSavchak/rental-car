@@ -11,6 +11,7 @@ export const CatalogForm = () => {
   const dispatch = useDispatch();
 
   const makesOptions = [
+    { value: 'All', label: 'All', className: css.dropDownOption },
     { value: 'Buick', label: 'Buick', className: css.dropDownOption },
     { value: 'Volvo', label: 'Volvo', className: css.dropDownOption },
     { value: 'HUMMER', label: 'HUMMER', className: css.dropDownOption },
@@ -46,6 +47,7 @@ export const CatalogForm = () => {
     { value: 'Land', label: 'Land', className: css.dropDownOption },
   ];
   const pricesOptions = [
+    { value: 'All', label: 'All', className: css.dropDownOption },
     { value: '30', label: '30', className: css.dropDownOption },
     { value: '40', label: '40', className: css.dropDownOption },
     { value: '50', label: '50', className: css.dropDownOption },
@@ -85,17 +87,42 @@ export const CatalogForm = () => {
 
   // const currentMileage =
   const onMakesDropChange = value => {
-    const inputData = { make: value.value };
+    const inputData = { make: value.value === 'All' ? '' : value.value };
     setFormData(prevState => ({ ...prevState, ...inputData }));
   };
   const onPricesDropChange = value => {
-    const inputData = { rentalPrice: `$${value.value}` };
+    const inputData = {
+      rentalPrice: value.value === 'All' ? '' : `$${value.value}`,
+    };
     setFormData(prevState => ({ ...prevState, ...inputData }));
   };
+  const convertNum = number => {
+    const num = String(number);
+    let result;
 
+    switch (num.length) {
+      case 3:
+        result = `${num[0]},0${num[1]}${num[2]}`;
+        break;
+      case 4:
+        result = `${num[0]},${num[1]}${num[2]}${num[3]}`;
+
+        break;
+      case 5:
+        result = `${num[0]},${num[1]}${num[2]}${num[3]}${num[3]}`;
+        break;
+      default:
+        return;
+    }
+
+    return result;
+  };
   const onInputChange = e => {
     const { name, value } = e.target;
-    const inputData = { [name]: value };
+
+    const inputData = {
+      [name]: value,
+    };
 
     setFormData(prevState => ({ ...prevState, ...inputData }));
   };
@@ -103,7 +130,6 @@ export const CatalogForm = () => {
   const onSubmit = e => {
     e.preventDefault();
     dispatch(setFilter(formData));
-    setFormData(formInitialState);
   };
 
   return (

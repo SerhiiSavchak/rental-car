@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const favoriteInitialState = [];
+const favoriteInitialState = {
+  favorite: [],
+};
 
 const favoriteSlice = createSlice({
   // Имя слайса
@@ -10,10 +12,13 @@ const favoriteSlice = createSlice({
   // Объект редюсеров
   reducers: {
     setFavorite(state, action) {
-      state.push(action.payload);
+      if (!state.favorite.includes(action.payload)) {
+        state.favorite.push(action.payload);
+      }
+      return;
     },
     deleteFavorite(state, action) {
-      state = state.filter(car => car.id !== action.payload);
+      state.favorite = state.favorite.filter(car => car !== action.payload);
     },
   },
 });

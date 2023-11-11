@@ -103,6 +103,7 @@
   margin-bottom: 14px;
 }
 .dropDownMenu::-webkit-scrollbar-thumb {
+  height: 130px;
   background: rgba(18, 20, 23, 0.05);
   margin-right: 8px;
   border-radius: 10px;

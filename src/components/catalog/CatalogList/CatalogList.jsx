@@ -1,5 +1,5 @@
 import css from './CatalogList.module.css';
 
 export const CatalogList = ({ children }) => {
-  return <ul>{children}</ul>;
+  return <ul className={css.catalogList}>{children}</ul>;
 };

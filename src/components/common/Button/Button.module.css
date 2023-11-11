@@ -8,4 +8,8 @@
   font-weight: 500;
   border-radius: 12px;
   line-height: 142.8%;
+  transition: background-color var(--cubic);
+}
+.btn:is(:hover, :focus) {
+  background-color: var(--blue);
 }
