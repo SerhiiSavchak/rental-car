@@ -17,7 +17,7 @@ export const Catalog = () => {
   const currentCar = useSelector(getCurrentCar);
   const isLoading = useSelector(getCarsIsLoading);
   const [isShowModal, setIsShowModal] = useState(false);
-
+  console.log('page', page);
   useEffect(() => {
     if (currentCar) {
       setIsShowModal(true);
@@ -25,6 +25,7 @@ export const Catalog = () => {
   }, [currentCar]);
 
   useEffect(() => {
+    console.log('first render');
     dispatch(fetchCars({ page }));
   }, [dispatch, page]);
 
@@ -34,7 +35,7 @@ export const Catalog = () => {
         <Container>
           <CatalogForm />
 
-          <CatalogList setPage={setPage} />
+          <CatalogList page={page} setPage={setPage} />
         </Container>
       </section>
       {isShowModal && (

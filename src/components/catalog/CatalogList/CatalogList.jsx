@@ -5,7 +5,7 @@ import { getClientFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux';
 import { getCars, getCarResponse } from 'redux/selectors';
 
-export const CatalogList = ({ setPage }) => {
+export const CatalogList = ({ page, setPage }) => {
   const carResponse = useSelector(getCarResponse);
   const cars = useSelector(getCars);
 
@@ -29,6 +29,7 @@ export const CatalogList = ({ setPage }) => {
       });
     });
   };
+
   console.log('filteredCars', filteredCars().length);
   const onLoadMore = () => {
     setPage(prevPage => prevPage + 1);
