@@ -30,7 +30,6 @@ export const CatalogItem = ({ car }) => {
     <li id={car.id} className={css.catalogMainItem}>
       <button
         onClick={() => onFavoriteClick(car.id)}
-        style={!car.img ? { top: '25px' } : {}}
         className={css.catalogFavBtn}
         type="button"
       >
