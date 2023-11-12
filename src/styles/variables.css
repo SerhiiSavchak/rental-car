@@ -5,7 +5,10 @@
   --blue: #0b44cd;
   --main-gray: #8a8a89;
   --main-bg-gray: #f7f7fb;
+  --bg-gray: #f9f9f9;
   --dropdown-gray: rgba(18, 20, 23, 0.2);
   --gray: rgba(18, 20, 23, 0.5);
+  --bg-black: rgba(0, 0, 0, 0.6);
+  --gray-second: #363535;
   --cubic: 250ms cubic-bezier(0.165, 0.84, 0.44, 1.03);
 }

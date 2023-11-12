@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { deleteCars } from 'redux/car/carSlice';
 import { deleteFilter } from 'redux/filter/filterSlice';
+
 export const Welcome = () => {
   const dispatch = useDispatch();
   useEffect(() => {

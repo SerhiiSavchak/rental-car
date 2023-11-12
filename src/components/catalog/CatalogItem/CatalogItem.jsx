@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFavorite, deleteFavorite } from 'redux/favorite/favoriteSlice';
 import { getFavoriteCars } from 'redux/selectors';
 import { fetchCarById } from 'redux/car/carOperations';
+import PropTypes from 'prop-types';
 
 export const CatalogItem = ({ car }) => {
   const dispatch = useDispatch();
@@ -40,7 +41,12 @@ export const CatalogItem = ({ car }) => {
         </svg>
       </button>
       <div className={css.catalogImgWrap}>
-        <img className={css.catalogImg} alt="car" src={car.img} />
+        <img
+          className={css.catalogImg}
+          alt="car"
+          loading="lazy"
+          src={car.img}
+        />
       </div>
       <div className={css.catalogThumb}>
         <div className={css.catalogWrap}>
@@ -92,4 +98,25 @@ export const CatalogItem = ({ car }) => {
       </div>
     </li>
   );
+};
+
+CatalogItem.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    make: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    description: PropTypes.string.isRequired,
+    fuelConsumption: PropTypes.string.isRequired,
+    engineSize: PropTypes.string.isRequired,
+    accessories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
+    rentalPrice: PropTypes.string.isRequired,
+    rentalCompany: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    rentalConditions: PropTypes.string.isRequired,
+    mileage: PropTypes.number.isRequired,
+  }),
 };

@@ -5,10 +5,10 @@ import css from './CatalogForm.module.css';
 import sprite from 'images/icons/sprite.svg';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { setServerFilter, setClientFilter } from 'redux/filter/filterSlice';
 import { fetchCars } from 'redux/car/carOperations';
 import { deleteCars, deleteCarResponse } from 'redux/car/carSlice';
+
 export const CatalogForm = () => {
   const dispatch = useDispatch();
 
@@ -48,6 +48,7 @@ export const CatalogForm = () => {
     { value: 'Kia', label: 'Kia', className: css.dropDownOption },
     { value: 'Land', label: 'Land', className: css.dropDownOption },
   ];
+
   const pricesOptions = [
     { value: 'All', label: 'All', className: css.dropDownOption },
     { value: '30', label: '30', className: css.dropDownOption },
@@ -85,6 +86,7 @@ export const CatalogForm = () => {
   };
 
   const [make, setMake] = useState('');
+
   const [formData, setFormData] = useState(formInitialState);
 
   const onMakesDropChange = value => {

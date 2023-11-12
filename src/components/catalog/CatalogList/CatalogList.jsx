@@ -4,9 +4,12 @@ import { Button } from 'components/common/Button/Button';
 import { getClientFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux';
 import { getCars, getCarResponse } from 'redux/selectors';
+import { motion, AnimatePresence } from 'framer-motion';
+import PropTypes from 'prop-types';
 
-export const CatalogList = ({ page, setPage }) => {
+export const CatalogList = ({ setPage }) => {
   const carResponse = useSelector(getCarResponse);
+
   const cars = useSelector(getCars);
 
   const clientFilter = useSelector(getClientFilter);
@@ -30,24 +33,35 @@ export const CatalogList = ({ page, setPage }) => {
     });
   };
 
-  console.log('filteredCars', filteredCars().length);
   const onLoadMore = () => {
     setPage(prevPage => prevPage + 1);
   };
 
   return (
-    <ul className={css.catalogList}>
-      {filteredCars() &&
-        filteredCars().map(car => <CatalogItem key={car.id} car={car} />)}
-      {carResponse.length >= 12 && filteredCars().length >= 12 && (
-        <Button
-          handleClick={onLoadMore}
-          text="Load more"
-          type="button"
-          padding="10px 44px"
-          margin="70px auto 0px"
-        />
-      )}
-    </ul>
+    <AnimatePresence>
+      <motion.ul
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0 }}
+        className={css.catalogList}
+      >
+        {filteredCars() &&
+          filteredCars().map(car => <CatalogItem key={car.id} car={car} />)}
+        {carResponse.length >= 12 && filteredCars().length >= 12 && (
+          <Button
+            handleClick={onLoadMore}
+            text="Load more"
+            type="button"
+            padding="10px 44px"
+            margin="70px auto 0px"
+          />
+        )}
+      </motion.ul>
+    </AnimatePresence>
   );
+};
+
+CatalogList.propTypes = {
+  setPage: PropTypes.func,
 };

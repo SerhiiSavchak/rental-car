@@ -1,6 +1,12 @@
 .catalogMainItem {
   width: 274px;
   position: relative;
+  scale: 0.95;
+  transition: scale var(--cubic);
+}
+
+.catalogMainItem:is(:hover, :focus) {
+  scale: 1.02;
 }
 
 .catalogImgWrap {
@@ -59,7 +65,7 @@
 }
 
 .catalogItem {
-  border-right: 1px solid rgba(18, 20, 23, 0.1);
+  border-right: 1px solid var(--dropdown-gray);
   padding-right: 6px;
 }
 

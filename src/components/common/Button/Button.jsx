@@ -1,4 +1,5 @@
 import css from './Button.module.css';
+import PropTypes from 'prop-types';
 
 export const Button = ({
   handleClick,
@@ -20,4 +21,14 @@ export const Button = ({
       {text}
     </button>
   );
+};
+
+Button.propTypes = {
+  handleClick: PropTypes.func,
+  id: PropTypes.number,
+  text: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  padding: PropTypes.string.isRequired,
+  width: PropTypes.string,
+  margin: PropTypes.string,
 };

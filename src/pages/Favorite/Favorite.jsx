@@ -13,6 +13,13 @@ import { deleteFilter } from 'redux/filter/filterSlice';
 
 export const Favorite = () => {
   const dispatch = useDispatch();
+
+  const favoriteCars = useSelector(getFavoriteCars);
+
+  const cars = useSelector(getCars);
+
+  const filteredCars = cars.filter(car => favoriteCars.includes(car.id));
+
   useEffect(() => {
     dispatch(deleteCars());
     dispatch(fetchCars({ limit: '' }));
@@ -22,10 +29,6 @@ export const Favorite = () => {
     };
   }, [dispatch]);
 
-  const favoriteCars = useSelector(getFavoriteCars);
-  const cars = useSelector(getCars);
-  const filteredCars = cars.filter(car => favoriteCars.includes(car.id));
-
   return (
     <section className={css.favoriteSection}>
       <Container>
@@ -33,7 +36,7 @@ export const Favorite = () => {
           {filteredCars && filteredCars.length !== 0 ? (
             filteredCars.map(car => <CatalogItem key={car.id} car={car} />)
           ) : (
-            <p>Dont find any favorite</p>
+            <p className={css.favoriteText}>No favorite car found</p>
           )}
         </FavoriteList>
       </Container>

@@ -1,10 +1,8 @@
 import css from './Catalog.module.css';
 import { CatalogForm } from 'components/catalog/CatalogForm/CatalogForm';
 import { CatalogList } from 'components/catalog/CatalogList/CatalogList';
-
 import { Container } from 'components/common/Container/Container';
 import { CarModal } from 'components/common/CarModal/CarModal';
-
 import { fetchCars } from 'redux/car/carOperations';
 import { getCarsIsLoading, getCurrentCar } from 'redux/selectors';
 import { TailSpin } from 'react-loader-spinner';
@@ -17,7 +15,7 @@ export const Catalog = () => {
   const currentCar = useSelector(getCurrentCar);
   const isLoading = useSelector(getCarsIsLoading);
   const [isShowModal, setIsShowModal] = useState(false);
-  console.log('page', page);
+
   useEffect(() => {
     if (currentCar) {
       setIsShowModal(true);
@@ -25,13 +23,12 @@ export const Catalog = () => {
   }, [currentCar]);
 
   useEffect(() => {
-    console.log('first render');
     dispatch(fetchCars({ page }));
   }, [dispatch, page]);
 
   return (
     <>
-      <section style={{ padding: '70px 0px' }}>
+      <section className={css.catalogSection}>
         <Container>
           <CatalogForm />
 

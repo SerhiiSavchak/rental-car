@@ -1,5 +1,5 @@
 .modalBackdrop {
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--bg-black);
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,6 @@
 }
 .modalWindow {
   padding: 40px;
-
   border-radius: 24px;
   position: fixed;
   background-color: var(--main-white);
@@ -28,19 +27,17 @@
 
 .modalWindow::-webkit-scrollbar {
   width: 9px;
-
   background: var(--main);
 }
 
 .modalWindow::-webkit-scrollbar-track {
   margin-top: 54px;
-
   margin-bottom: 54px;
 }
+
 .modalWindow::-webkit-scrollbar-thumb {
   height: 130px;
   background: var(--main-blue);
-
   border-radius: 10px;
   padding: 8px;
 }
@@ -54,35 +51,39 @@
   background-color: transparent;
   border: none;
 }
+
 .modalIcon {
   width: 24px;
-
   height: 24px;
   stroke: var(--main-black);
 }
+
 .modalImg {
   width: 461px;
   height: 268px;
   border-radius: 14px;
   margin-bottom: 14px;
 }
+
 .modalTopThumb {
   margin-bottom: 14px;
 }
+
 .modalTitleWrap {
   margin-bottom: 8px;
 }
+
 .modalTopTitle {
   color: var(--main-black);
   font-size: 18px;
   font-weight: 600;
   line-height: 150%;
 }
+
 .modalMakeSpan {
   color: var(--main-blue);
 }
-.modalYearSpan {
-}
+
 .modalTopList,
 .modalList {
   display: flex;
@@ -97,7 +98,7 @@
 }
 .modalTopItem,
 .modalItem {
-  border-right: 1px solid rgba(18, 20, 23, 0.1);
+  border-right: 1px solid var(--drop-down-gray);
   padding-right: 6px;
 }
 
@@ -109,9 +110,7 @@
 .modalTopText,
 .modalText {
   color: var(--gray);
-
   font-size: 12px;
-
   font-weight: 400;
   line-height: 150%;
 }
@@ -121,11 +120,11 @@
   color: var(--main-black);
   font-size: 14px;
   font-weight: 500;
-
   line-height: 142.8%;
 }
 
-.modalDescText {
+.modalDescText,
+.modalThumb {
   margin-bottom: 24px;
 }
 .modalTitle,
@@ -134,42 +133,34 @@
   margin-bottom: 8px;
 }
 
-.modalThumb {
-  margin-bottom: 24px;
-}
-
 .modalBottomList {
   display: flex;
   width: 461px;
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .modalBottomItem {
-  background-color: #f9f9f9;
+  background-color: var(--bg-gray);
   padding: 7px 14px;
   justify-content: center;
   align-items: center;
   border-radius: 35px;
 }
-.modalBottomText {
-  color: #363535;
 
+.modalBottomText {
+  color: var(--gray-second);
   font-family: Montserrat;
   font-size: 12px;
-
   font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.24px;
 }
+
 .modalBottomThumb {
   margin-bottom: 24px;
 }
-.modalBottomList {
-}
-.modalBottomItem {
-}
-.modalBottomText {
-}
+
 .modalBottomSpan {
   font-weight: 600;
   color: var(--main-blue);
