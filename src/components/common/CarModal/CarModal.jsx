@@ -29,6 +29,7 @@ export const CarModal = ({ car, setIsShowModal }) => {
     const onEscKeyPress = e => {
       if (e.key === 'Escape') {
         setIsShowModal(false);
+        dispatch(deleteCurrentCar());
       }
     };
     const bodyScroll = disable => {
@@ -41,7 +42,7 @@ export const CarModal = ({ car, setIsShowModal }) => {
       bodyScroll(false);
       window.removeEventListener('keydown', onEscKeyPress);
     };
-  }, [setIsShowModal]);
+  }, [setIsShowModal, dispatch]);
 
   const modalRoot = document.querySelector('#modal-root');
   return createPortal(

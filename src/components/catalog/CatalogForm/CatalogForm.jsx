@@ -6,7 +6,9 @@ import sprite from 'images/icons/sprite.svg';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { setFilter } from 'redux/filter/filterSlice';
+import { setServerFilter, setClientFilter } from 'redux/filter/filterSlice';
+import { fetchCars } from 'redux/car/carOperations';
+import { deleteCars, deleteCarResponse } from 'redux/car/carSlice';
 export const CatalogForm = () => {
   const dispatch = useDispatch();
 
@@ -77,19 +79,19 @@ export const CatalogForm = () => {
   ];
 
   const formInitialState = {
-    make: '',
     rentalPrice: '',
     mileageFrom: '',
     mileageTo: '',
   };
 
+  const [make, setMake] = useState('');
   const [formData, setFormData] = useState(formInitialState);
 
-  // const currentMileage =
   const onMakesDropChange = value => {
-    const inputData = { make: value.value === 'All' ? '' : value.value };
-    setFormData(prevState => ({ ...prevState, ...inputData }));
+    const inputData = value.value === 'All' ? '' : value.value;
+    setMake(inputData);
   };
+
   const onPricesDropChange = value => {
     const inputData = {
       rentalPrice: value.value === 'All' ? '' : `$${value.value}`,
@@ -109,7 +111,12 @@ export const CatalogForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    dispatch(setFilter(formData));
+
+    dispatch(deleteCars());
+    dispatch(deleteCarResponse());
+    dispatch(setServerFilter(make));
+    dispatch(setClientFilter(formData));
+    dispatch(fetchCars({ page: 1, make, limit: make !== '' ? '' : 12 }));
   };
 
   return (
@@ -117,7 +124,7 @@ export const CatalogForm = () => {
       <label className={css.catalogLabel}>
         Car brand
         <Dropdown
-          value={formData.make}
+          value={make}
           className={css.dropDownMakes}
           controlClassName={css.dropDownCtrl}
           placeholderClassName={css.dropDownPlaceholderMakes}

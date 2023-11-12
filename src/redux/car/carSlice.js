@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchCars, fetchCarById } from './carOperations';
 const contactsInitialState = {
   cars: [],
+  carResponse: [],
   currentCar: null,
   isLoading: false,
   error: null,
@@ -17,6 +18,12 @@ const carSlice = createSlice({
     deleteCurrentCar(state, action) {
       state.currentCar = null;
     },
+    deleteCars(state, action) {
+      state.cars = [];
+    },
+    deleteCarResponse(state, action) {
+      state.carResponse = [];
+    },
   },
   extraReducers: builder => {
     builder
@@ -26,7 +33,9 @@ const carSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.cars = action.payload;
+
+        state.cars.push(...action.payload);
+        state.carResponse = action.payload;
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
@@ -49,4 +58,5 @@ const carSlice = createSlice({
 
 // Редюсер слайса
 export const carReducer = carSlice.reducer;
-export const { deleteCurrentCar } = carSlice.actions;
+export const { deleteCurrentCar, deleteCars, deleteCarResponse } =
+  carSlice.actions;

@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const filterInitialState = null;
+const filterInitialState = {
+  client: {
+    rentalPrice: '',
+    mileageFrom: '',
+    mileageTo: '',
+  },
+  server: {
+    make: '',
+  },
+};
 
 const filterSlice = createSlice({
   // Имя слайса
@@ -9,13 +18,22 @@ const filterSlice = createSlice({
   initialState: filterInitialState,
   // Объект редюсеров
   reducers: {
-    setFilter(state, action) {
-      state = action.payload;
+    setClientFilter(state, action) {
+      state.client = { ...state.client, ...action.payload };
+      return state;
+    },
+    setServerFilter(state, action) {
+      state.server.make = action.payload;
+      return state;
+    },
+    deleteFilter(state, action) {
+      state = filterInitialState;
       return state;
     },
   },
 });
 
-export const { setFilter } = filterSlice.actions;
+export const { setClientFilter, setServerFilter, deleteFilter } =
+  filterSlice.actions;
 // Редюсер слайса
 export const filterReducer = filterSlice.reducer;

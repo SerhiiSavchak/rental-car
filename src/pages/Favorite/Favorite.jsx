@@ -1,30 +1,41 @@
 import css from './Favorite.module.css';
 import { Container } from 'components/common/Container/Container';
-import { CatalogList } from 'components/catalog/CatalogList/CatalogList';
+
 import { CatalogItem } from 'components/catalog/CatalogItem/CatalogItem';
 import { getFavoriteCars, getCars } from 'redux/selectors';
 import { fetchCars } from 'redux/car/carOperations';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-
+import { deleteCars } from 'redux/car/carSlice';
+import { FavoriteList } from 'components/favorite/FavoriteList/FavoriteList';
+import { deleteFilter } from 'redux/filter/filterSlice';
 export const Favorite = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(deleteCars());
     dispatch(fetchCars({ limit: '' }));
+    return () => {
+      dispatch(deleteCars());
+      dispatch(deleteFilter());
+    };
   }, [dispatch]);
 
   const favoriteCars = useSelector(getFavoriteCars);
   const cars = useSelector(getCars);
   const filteredCars = cars.filter(car => favoriteCars.includes(car.id));
+  console.log(filteredCars);
 
   return (
     <section className={css.favoriteSection}>
       <Container>
-        <CatalogList>
-          {filteredCars.length !== 0 &&
-            filteredCars.map(car => <CatalogItem key={car.id} car={car} />)}
-        </CatalogList>
+        <FavoriteList>
+          {filteredCars.length !== 0 ? (
+            filteredCars.map(car => <CatalogItem key={car.id} car={car} />)
+          ) : (
+            <p>Dont find any favorite</p>
+          )}
+        </FavoriteList>
       </Container>
     </section>
   );
