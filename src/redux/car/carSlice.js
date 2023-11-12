@@ -3,6 +3,7 @@ import { fetchCars, fetchCarById } from './carOperations';
 const contactsInitialState = {
   cars: [],
   carResponse: [],
+  showModal: false,
   currentCar: null,
   isLoading: false,
   error: null,
@@ -17,6 +18,7 @@ const carSlice = createSlice({
   reducers: {
     deleteCurrentCar(state, action) {
       state.currentCar = null;
+      state.showModal = false;
     },
     deleteCars(state, action) {
       state.cars = [];
@@ -48,6 +50,7 @@ const carSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.currentCar = action.payload[0];
+        state.showModal = true;
       })
       .addCase(fetchCarById.rejected, (state, action) => {
         state.isLoading = false;

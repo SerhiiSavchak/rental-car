@@ -8,18 +8,16 @@ import { convertNum } from 'utils/numConverter';
 import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-export const CarModal = ({ car, setIsShowModal }) => {
+export const CarModal = ({ car }) => {
   const dispatch = useDispatch();
 
   const onHandleClick = e => {
     switch (e.target.id) {
       case 'backdrop':
-        setIsShowModal(false);
         dispatch(deleteCurrentCar());
 
         return;
       case 'close':
-        setIsShowModal(false);
         dispatch(deleteCurrentCar());
         return;
       default:
@@ -30,7 +28,6 @@ export const CarModal = ({ car, setIsShowModal }) => {
   useEffect(() => {
     const onEscKeyPress = e => {
       if (e.key === 'Escape') {
-        setIsShowModal(false);
         dispatch(deleteCurrentCar());
       }
     };
@@ -43,7 +40,7 @@ export const CarModal = ({ car, setIsShowModal }) => {
       bodyScroll(false);
       window.removeEventListener('keydown', onEscKeyPress);
     };
-  }, [setIsShowModal, dispatch]);
+  }, [dispatch]);
 
   const modalRoot = document.querySelector('#modal-root');
   return createPortal(
@@ -209,5 +206,4 @@ CarModal.propTypes = {
     rentalConditions: PropTypes.string.isRequired,
     mileage: PropTypes.number.isRequired,
   }),
-  setIsShowModal: PropTypes.func.isRequired,
 };
