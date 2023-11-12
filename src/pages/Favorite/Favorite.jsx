@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { deleteCars } from 'redux/car/carSlice';
 import { FavoriteList } from 'components/favorite/FavoriteList/FavoriteList';
 import { deleteFilter } from 'redux/filter/filterSlice';
+
 export const Favorite = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,13 +25,13 @@ export const Favorite = () => {
   const favoriteCars = useSelector(getFavoriteCars);
   const cars = useSelector(getCars);
   const filteredCars = cars.filter(car => favoriteCars.includes(car.id));
-  console.log(filteredCars);
+  console.log('filteredCars', filteredCars);
 
   return (
     <section className={css.favoriteSection}>
       <Container>
         <FavoriteList>
-          {filteredCars.length !== 0 ? (
+          {filteredCars && filteredCars.length !== 0 ? (
             filteredCars.map(car => <CatalogItem key={car.id} car={car} />)
           ) : (
             <p>Dont find any favorite</p>

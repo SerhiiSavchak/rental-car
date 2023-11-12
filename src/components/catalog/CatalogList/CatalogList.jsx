@@ -36,9 +36,8 @@ export const CatalogList = ({ setPage }) => {
 
   return (
     <ul className={css.catalogList}>
-      {filteredCars().map(car => (
-        <CatalogItem key={car.id} car={car} />
-      ))}
+      {filteredCars() &&
+        filteredCars().map(car => <CatalogItem key={car.id} car={car} />)}
       {carResponse.length >= 12 && filteredCars().length >= 12 && (
         <Button
           handleClick={onLoadMore}
