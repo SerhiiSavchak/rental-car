@@ -4,7 +4,7 @@ Rental-car
 
 ## Description
 
-A website created for convenient search for cars for rent with a convenient
+A website created for convenient search  cars for rent with a convenient
 filtering and search system
 
 ## Installation
