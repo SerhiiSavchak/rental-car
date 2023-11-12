@@ -5,11 +5,10 @@ const favoriteInitialState = {
 };
 
 const favoriteSlice = createSlice({
-  // Имя слайса
   name: 'favorite',
-  // Начальное состояние редюсера слайса
+
   initialState: favoriteInitialState,
-  // Объект редюсеров
+
   reducers: {
     setFavorite(state, action) {
       if (!state.favorite.includes(action.payload)) {
@@ -24,5 +23,5 @@ const favoriteSlice = createSlice({
 });
 
 export const { setFavorite, deleteFavorite } = favoriteSlice.actions;
-// Редюсер слайса
+
 export const favoriteReducer = favoriteSlice.reducer;

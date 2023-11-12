@@ -10,11 +10,10 @@ const contactsInitialState = {
 };
 
 const carSlice = createSlice({
-  // Имя слайса
   name: 'cars',
-  // Начальное состояние редюсера слайса
+
   initialState: contactsInitialState,
-  // Объект редюсеров
+
   reducers: {
     deleteCurrentCar(state, action) {
       state.currentCar = null;
@@ -59,7 +58,6 @@ const carSlice = createSlice({
   },
 });
 
-// Редюсер слайса
 export const carReducer = carSlice.reducer;
 export const { deleteCurrentCar, deleteCars, deleteCarResponse } =
   carSlice.actions;

@@ -33,11 +33,6 @@ export const CatalogForm = () => {
       className: css.dropDownOption,
     },
     {
-      value: 'Chevrolet',
-      label: 'Chevrolet',
-      className: css.dropDownOption,
-    },
-    {
       value: 'Skoda',
       label: 'Skoda',
       className: css.dropDownOption,

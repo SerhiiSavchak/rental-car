@@ -12,11 +12,10 @@ const filterInitialState = {
 };
 
 const filterSlice = createSlice({
-  // Имя слайса
   name: 'filter',
-  // Начальное состояние редюсера слайса
+
   initialState: filterInitialState,
-  // Объект редюсеров
+
   reducers: {
     setClientFilter(state, action) {
       state.client = { ...state.client, ...action.payload };
@@ -35,5 +34,5 @@ const filterSlice = createSlice({
 
 export const { setClientFilter, setServerFilter, deleteFilter } =
   filterSlice.actions;
-// Редюсер слайса
+
 export const filterReducer = filterSlice.reducer;
