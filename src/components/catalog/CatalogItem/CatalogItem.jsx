@@ -1,6 +1,7 @@
 import { Button } from 'components/common/Button/Button';
 import css from './CatalogItem.module.css';
 import { useState } from 'react';
+import errorImg from 'images/noImg.svg';
 import sprite from 'images/icons/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFavorite, deleteFavorite } from 'redux/favorite/favoriteSlice';
@@ -29,6 +30,7 @@ export const CatalogItem = ({ car }) => {
     <li id={car.id} className={css.catalogMainItem}>
       <button
         onClick={() => onFavoriteClick(car.id)}
+        style={!car.img ? { top: '25px' } : {}}
         className={css.catalogFavBtn}
         type="button"
       >
@@ -44,8 +46,9 @@ export const CatalogItem = ({ car }) => {
         <img
           className={css.catalogImg}
           alt="car"
+          style={!car.img ? { minWidth: '315px' } : {}}
           loading="lazy"
-          src={car.img}
+          src={car.img ? car.img : errorImg}
         />
       </div>
       <div className={css.catalogThumb}>
