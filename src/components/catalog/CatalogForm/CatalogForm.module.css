@@ -100,7 +100,7 @@
 
 .dropDownMenu::-webkit-scrollbar-thumb {
   height: 130px;
-  background: var(--gray);
+  background: var(--scroll-gray);
   margin-right: 8px;
   border-radius: 10px;
   padding: 8px;
