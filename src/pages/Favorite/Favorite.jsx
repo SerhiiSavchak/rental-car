@@ -25,7 +25,6 @@ export const Favorite = () => {
   const favoriteCars = useSelector(getFavoriteCars);
   const cars = useSelector(getCars);
   const filteredCars = cars.filter(car => favoriteCars.includes(car.id));
-  console.log('filteredCars', filteredCars);
 
   return (
     <section className={css.favoriteSection}>
