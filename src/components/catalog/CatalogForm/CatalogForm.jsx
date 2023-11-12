@@ -25,6 +25,28 @@ export const CatalogForm = () => {
     { value: 'Hyundai', label: 'Hyundai', className: css.dropDownOption },
     { value: 'MINI', label: 'MINI', className: css.dropDownOption },
     { value: 'Bentley', label: 'Bentley', className: css.dropDownOption },
+    { value: 'Ford', label: 'Ford', className: css.dropDownOption },
+    { value: 'Toyota', label: 'Toyota', className: css.dropDownOption },
+    {
+      value: 'Volkswagen',
+      label: 'Volkswagen',
+      className: css.dropDownOption,
+    },
+    {
+      value: 'Chevrolet',
+      label: 'Chevrolet',
+      className: css.dropDownOption,
+    },
+    {
+      value: 'Skoda',
+      label: 'Skoda',
+      className: css.dropDownOption,
+    },
+    {
+      value: 'Honda',
+      label: 'Honda',
+      className: css.dropDownOption,
+    },
     {
       value: 'Mercedes-Benz',
       label: 'Mercedes-Benz',
