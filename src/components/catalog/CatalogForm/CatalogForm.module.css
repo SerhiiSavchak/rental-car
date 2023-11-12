@@ -112,6 +112,7 @@
   width: 20px;
   height: 20px;
   stroke: var(--main-black);
+  cursor: pointer;
 }
 
 .iconArrowRotate {
@@ -120,6 +121,7 @@
   width: 20px;
   height: 20px;
   stroke: var(--main-black);
+  cursor: pointer;
   transform: rotate(180deg);
 }
 
