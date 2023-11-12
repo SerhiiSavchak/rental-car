@@ -8,6 +8,7 @@ import { getCarsIsLoading, getCurrentCar } from 'redux/selectors';
 import { TailSpin } from 'react-loader-spinner';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const Catalog = () => {
   const dispatch = useDispatch();
@@ -27,14 +28,20 @@ export const Catalog = () => {
   }, [dispatch, page]);
 
   return (
-    <>
-      <section className={css.catalogSection}>
+    <AnimatePresence>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0 }}
+        className={css.catalogSection}
+      >
         <Container>
           <CatalogForm />
 
           <CatalogList page={page} setPage={setPage} />
         </Container>
-      </section>
+      </motion.section>
       {isShowModal && (
         <CarModal setIsShowModal={setIsShowModal} car={currentCar} />
       )}
@@ -43,6 +50,6 @@ export const Catalog = () => {
           <TailSpin color="#3470ff" />
         </div>
       )}
-    </>
+    </AnimatePresence>
   );
 };
