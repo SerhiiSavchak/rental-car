@@ -4,7 +4,7 @@ import { CatalogList } from 'components/catalog/CatalogList/CatalogList';
 import { Container } from 'components/common/Container/Container';
 import { CarModal } from 'components/common/CarModal/CarModal';
 import { fetchCars } from 'redux/car/carOperations';
-import { getCarsIsLoading, getCurrentCar, getShowModal } from 'redux/selectors';
+import { getCarsIsLoading, getCurrentCar, getShowModal ,getCarsError } from 'redux/selectors';
 import { TailSpin } from 'react-loader-spinner';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +15,8 @@ export const Catalog = () => {
   const [page, setPage] = useState(1);
   const currentCar = useSelector(getCurrentCar);
   const isLoading = useSelector(getCarsIsLoading);
+  const error = useSelector(getCarsError);
+
   const isShowModal = useSelector(getShowModal);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export const Catalog = () => {
           <TailSpin color="#3470ff" />
         </div>
       )}
+		{error && <p className={css.catalogErrorText}>Oops... Try later</p>}
     </>
   );
 };
