@@ -53,10 +53,10 @@ export const CatalogItem = ({ car }) => {
       <div className={css.catalogThumb}>
         <div className={css.catalogWrap}>
           <h2 className={css.catalogTitle}>
-            {car.model.length > 8 ? `${car.make},` : `${car.make}`}
+            {car.model.length > 7 ? `${car.make},` : `${car.make}`}
             <span className={css.catalogMakeSpan}>
               {' '}
-              {car.model.length > 8 ? '' : `${car.model},`}
+              {car.model.length > 7 ? '' : `${car.model},`}
             </span>
             <span className={css.catalogSpan}> {car.year}</span>
           </h2>
