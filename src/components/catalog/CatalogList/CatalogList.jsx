@@ -59,6 +59,7 @@ export const CatalogList = ({ setPage }) => {
             margin="70px auto 0px"
           />
         )}
+		  { filteredCars().length  === 0  && <p className={css.catalogListText}>No result</p> }
     </AnimatePresence>
   );
 };

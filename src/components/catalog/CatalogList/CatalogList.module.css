@@ -6,6 +6,15 @@ justify-content: center;
   gap:  20px;
 }
 
+.catalogListText {
+	width: fit-content;
+	margin: 50px auto 0px;
+	color: var(--main-black);
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 150%;
+}
+
 @media screen and (min-width: 768px) {
 	.catalogList {
 		display: flex;
