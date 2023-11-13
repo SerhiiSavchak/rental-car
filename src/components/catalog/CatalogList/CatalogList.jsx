@@ -38,7 +38,7 @@ export const CatalogList = ({ setPage }) => {
   };
 
   return (
-    <AnimatePresence>
+    <>
       <motion.ul
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -60,7 +60,7 @@ export const CatalogList = ({ setPage }) => {
           />
         )}
 		  { filteredCars().length  === 0  && <p className={css.catalogListText}>No result</p> }
-    </AnimatePresence>
+    </>
   );
 };
 
