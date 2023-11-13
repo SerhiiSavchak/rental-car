@@ -1,6 +1,27 @@
 .catalogList {
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px 29px;
-  width: 1184px;
+align-items: center;
+justify-content: center;
+  flex-direction: column;
+  gap:  20px;
+}
+
+@media screen and (min-width: 768px) {
+	.catalogList {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+		gap: 30px 15px;
+		width: 768px;
+	 }
+	 
+}
+
+@media screen and (min-width: 1184px) {
+	.catalogList {
+		gap: 50px 20px;
+		width: 1155px;
+	 }
+	 
 }

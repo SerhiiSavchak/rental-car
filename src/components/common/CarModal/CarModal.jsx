@@ -54,7 +54,12 @@ export const CarModal = ({ car }) => {
           className={css.modalWindow}
         >
           <div className={css.modalContent}>
-            <button className={css.modalBtn} id="close" onClick={onHandleClick}>
+            <button
+              type="button"
+              className={css.modalBtn}
+              id="close"
+              onClick={onHandleClick}
+            >
               <svg id="close" className={css.modalIcon}>
                 <use id="close" href={sprite + '#icon-close'}></use>
               </svg>

@@ -1,6 +1,7 @@
 .catalogForm {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   gap: 18px;
   justify-content: center;
   margin: 0 auto;
@@ -133,7 +134,6 @@
   background-color: var(--main-bg-gray);
   color: var(--main-black);
   font-size: 16px;
-
   font-weight: 500;
   line-height: 111.11%;
 }
@@ -171,3 +171,13 @@
   top: 14px;
   right: 115px;
 }
+
+
+
+
+@media screen and (min-width: 768px) {
+	.catalogForm {
+		width:  678px;
+	 }
+	 
+ }

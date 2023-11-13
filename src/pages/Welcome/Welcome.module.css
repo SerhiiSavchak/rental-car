@@ -1,15 +1,14 @@
 .welcomeSection {
-  padding: 50px 0px;
+  padding: 30px 0px;
 }
 .welcomeTitle {
   color: var(--main-black);
   margin: 0 auto;
-  font-size: 52px;
+  margin-bottom: 24px;
   width: fit-content;
   font-style: normal;
   font-weight: 600;
   line-height: 111.1%;
-  margin-bottom: 24px;
 }
 
 .welcomeTopText,
@@ -18,11 +17,12 @@
   color: var(--main-black);
   font-family: Montserrat;
   margin: 0 auto;
-  font-size: 23px;
+  font-size: 12px;
   width: fit-content;
   font-style: normal;
   font-weight: 500;
   line-height: 111.1%;
+  text-align: center;
 }
 
 .welcomeTopText {
@@ -45,4 +45,38 @@
 
 .welcomeBottomLink:is(:hover, :focus) {
   color: var(--gray);
+}
+
+@media screen and (min-width: 768px) {
+  .welcomeSection {
+    padding: 35px 0px;
+  }
+  .welcomeTitle {
+    font-size: 36px;
+  }
+
+  .welcomeTopText,
+  .welcomeText,
+  .welcomeBottomLink {
+    font-size: 16px;
+  }
+  .welcomeBottomLink {
+  }
+}
+
+@media screen and (min-width: 1184px) {
+  .welcomeSection {
+    padding: 50px 0px;
+  }
+  .welcomeTitle {
+    font-size: 52px;
+  }
+
+  .welcomeTopText,
+  .welcomeText,
+  .welcomeBottomLink {
+    font-size: 23px;
+  }
+  .welcomeBottomLink {
+  }
 }
