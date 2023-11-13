@@ -8,12 +8,12 @@
   height: 100%;
 }
 .modalWindow {
-  padding: 40px;
+  padding: 20px;
   border-radius: 24px;
   position: fixed;
   background-color: var(--main-white);
-  width: 541px;
-  height: 752px;
+  width: 270px;
+  height: 430px;
   top: 50%;
   left: 50%;
   overflow: hidden;
@@ -43,10 +43,10 @@
 }
 
 .modalBtn {
-  top: 16px;
-  width: 24px;
-  height: 24px;
-  right: 16px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  right: 10px;
   position: fixed;
   background-color: transparent;
   border: none;
@@ -89,8 +89,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px 6px;
-  width: 460px;
-  height: 40px;
+  width: 100%;
+  height: auto;
 }
 
 .modalList {
@@ -98,7 +98,7 @@
 }
 .modalTopItem,
 .modalItem {
-  border-right: 1px solid var(--drop-down-gray);
+  border-right: 1px solid rgba(18, 20, 23, 0.10);
   padding-right: 6px;
 }
 
@@ -135,8 +135,8 @@
 
 .modalBottomList {
   display: flex;
-  width: 461px;
-  gap: 8px;
+ 
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -186,3 +186,48 @@
 .modalBottomBtn:is(:hover, :focus) {
   background-color: var(--blue);
 }
+
+
+
+@media screen and (min-width: 768px) {
+	.modalWindow {
+		padding: 40px;
+		width: 441px;
+		height: 752px;
+	}
+
+	.modalBtn {
+		top: 16px;
+		width: 24px;
+		height: 24px;
+		right: 16px;
+	}
+
+	.modalTopList,
+	.modalList {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 4px 6px;
+	  width: 460px;
+	}
+	
+	.modalBottomList {
+		width: 461px;
+		gap: 8px;
+	 }
+	
+ }
+ 
+ @media screen and (min-width: 1184px) {
+	.modalWindow {
+		width: 541px;
+	 
+	}
+
+	.modalTopList,
+	.modalList {
+	height: 40px;}
+
+
+ }
+ 
