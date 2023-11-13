@@ -48,7 +48,9 @@ export const CatalogList = ({ setPage }) => {
       >
         {filteredCars() &&
           filteredCars().map(car => <CatalogItem key={car.id} car={car} />)}
-        {carResponse.length >= 12 && filteredCars().length >= 12 && (
+       
+      </motion.ul>
+		{carResponse.length >= 12 && filteredCars().length >= 12 && (
           <Button
             handleClick={onLoadMore}
             text="Load more"
@@ -57,7 +59,6 @@ export const CatalogList = ({ setPage }) => {
             margin="70px auto 0px"
           />
         )}
-      </motion.ul>
     </AnimatePresence>
   );
 };
