@@ -4,7 +4,8 @@ Rental-car
 
 ## Description
 
-A website for car rental with adaptive design, filtering and searching system
+A website for car rental with adaptive design, filtering and searching system ability to add car to favorites 
+
 
 ## Installation
 
