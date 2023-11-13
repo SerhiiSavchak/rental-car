@@ -14,14 +14,14 @@
 }
 
 .headerMenuBtn {
-  width: 20px;
+  width: 35px;
   background-color: transparent;
   border: none;
-  height: 20px;
+  height:35px;
 }
 .headerMenuIcon {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
 }
 
 .headerImg:is(:hover, :focus) {
@@ -54,13 +54,13 @@
 
 @media screen and (min-width: 768px) {
   .headerMenuBtn {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 
   .headerMenuIcon {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 }
 
