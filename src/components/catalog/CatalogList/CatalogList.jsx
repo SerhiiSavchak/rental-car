@@ -3,13 +3,14 @@ import { CatalogItem } from 'components/catalog/CatalogItem/CatalogItem';
 import { Button } from 'components/common/Button/Button';
 import { getClientFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-import { getCars, getCarResponse } from 'redux/selectors';
-import { motion, AnimatePresence } from 'framer-motion';
+import { getCars, getCarResponse , getCarsIsLoading } from 'redux/selectors';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-export const CatalogList = ({ setPage }) => {
+export const CatalogList = ({ setPage  }) => {
   const carResponse = useSelector(getCarResponse);
 
+  const isLoading = useSelector(getCarsIsLoading);
   const cars = useSelector(getCars);
 
   const clientFilter = useSelector(getClientFilter);
@@ -59,7 +60,7 @@ export const CatalogList = ({ setPage }) => {
             margin="70px auto 0px"
           />
         )}
-		  { filteredCars().length  === 0  && <p className={css.catalogListText}>No result</p> }
+		  { filteredCars().length  === 0  && !isLoading && <p className={css.catalogListText}>No result</p> }
     </>
   );
 };
