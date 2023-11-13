@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 export const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
-  console.log(showMenu);
 
   const navigate = useNavigate();
   const handleClick = () => {
