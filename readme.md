@@ -13,6 +13,11 @@ npm install
 
 npm start
 
+
+## Warning!
+
+If you have problem with  receiving data, please disable browser extensions that block ads
+
 ## Links
 
 Github repository - https://github.com/SerhiiSavchak/rental-car
