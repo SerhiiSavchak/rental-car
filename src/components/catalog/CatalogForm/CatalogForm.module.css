@@ -172,12 +172,14 @@
   right: 115px;
 }
 
-
-
-
 @media screen and (min-width: 768px) {
-	.catalogForm {
-		width:  678px;
-	 }
-	 
- }
+  .catalogForm {
+    width: 678px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .catalogForm {
+    width: 885px;
+    flex-wrap: nowrap;
+  }
+}
