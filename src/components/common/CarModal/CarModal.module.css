@@ -98,7 +98,7 @@
 }
 .modalTopItem,
 .modalItem {
-  border-right: 1px solid rgba(18, 20, 23, 0.10);
+  border-right: 1px solid rgba(18, 20, 23, 0.1);
   padding-right: 6px;
 }
 
@@ -135,7 +135,7 @@
 
 .modalBottomList {
   display: flex;
- 
+
   gap: 10px;
   flex-wrap: wrap;
 }
@@ -187,47 +187,45 @@
   background-color: var(--blue);
 }
 
-
-
 @media screen and (min-width: 768px) {
-	.modalWindow {
-		padding: 40px;
-		width: 441px;
-		height: 752px;
-	}
+  .modalWindow {
+    padding: 40px;
+    width: 441px;
+    height: 752px;
+  }
 
-	.modalBtn {
-		top: 16px;
-		width: 24px;
-		height: 24px;
-		right: 16px;
-	}
+  .modalBtn {
+    top: 16px;
+    width: 24px;
+    height: 24px;
+    right: 16px;
+  }
 
-	.modalTopList,
-	.modalList {
-	  display: flex;
-	  flex-wrap: wrap;
-	  gap: 4px 6px;
-	  width: 460px;
-	}
-	
-	.modalBottomList {
-		width: 461px;
-		gap: 8px;
-	 }
-	
- }
- 
- @media screen and (min-width: 1184px) {
-	.modalWindow {
-		width: 541px;
-	 
-	}
+  .modalTopList,
+  .modalList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+    width: 460px;
+  }
 
-	.modalTopList,
-	.modalList {
-	height: 40px;}
+  .modalList {
+    overflow: hidden;
+  }
 
+  .modalBottomList {
+    width: 461px;
+    gap: 8px;
+  }
+}
 
- }
- 
+@media screen and (min-width: 1184px) {
+  .modalWindow {
+    width: 541px;
+  }
+
+  .modalTopList,
+  .modalList {
+    height: 40px;
+  }
+}
