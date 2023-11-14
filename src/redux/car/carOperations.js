@@ -6,7 +6,7 @@ export const fetchCars = createAsyncThunk(
   'cars/fetchCars',
   async ({ page, limit = 12, make = '' }, thunkAPI) => {
     try {
-      const { data } = await axios.get('advert', {
+      const { data } = await axios.get('cars', {
         params: { limit, page, make },
       });
 
@@ -21,7 +21,7 @@ export const fetchCarById = createAsyncThunk(
   'cars/fetchCarById',
   async (id, thunkAPI) => {
     try {
-      const { data } = await axios.get('advert', {
+      const { data } = await axios.get('cars', {
         params: { id },
       });
 
