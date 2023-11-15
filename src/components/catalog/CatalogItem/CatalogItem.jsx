@@ -10,6 +10,7 @@ import { fetchCarById } from 'redux/car/carOperations';
 import PropTypes from 'prop-types';
 
 export const CatalogItem = ({ car }) => {
+	const {id,img, make, model, year, rentalPrice, rentalCompany, address, type, mileage, engineSize} = car;
   const dispatch = useDispatch();
   const favorite = useSelector(getFavoriteCars);
   const [isFavorite, setIsFavorite] = useState(favorite.includes(car.id));
@@ -27,7 +28,7 @@ export const CatalogItem = ({ car }) => {
   };
 
   return (
-    <li id={car.id} className={css.catalogMainItem}>
+    <li id={id} className={css.catalogMainItem}>
       <button
         onClick={() => onFavoriteClick(car.id)}
         className={css.catalogFavBtn}
@@ -45,22 +46,22 @@ export const CatalogItem = ({ car }) => {
         <img
           className={css.catalogImg}
           alt="car"
-          style={!car.img ? { minWidth: '315px' } : {}}
+          style={!img ? { minWidth: '315px' } : {}}
           loading="lazy"
-          src={car.img ? car.img : errorImg}
+          src={img ? img : errorImg}
         />
       </div>
       <div className={css.catalogThumb}>
         <div className={css.catalogWrap}>
           <h2 className={css.catalogTitle}>
-            {car.model.length > 7 ? `${car.make},` : `${car.make}`}
+            {model.length > 7 ? `${make},` : `${make}`}
             <span className={css.catalogMakeSpan}>
               {' '}
-              {car.model.length > 7 ? '' : `${car.model},`}
+              {model.length > 7 ? '' : `${model},`}
             </span>
-            <span className={css.catalogSpan}> {car.year}</span>
+            <span className={css.catalogSpan}> {year}</span>
           </h2>
-          <p className={css.catalogTopText}>{car.rentalPrice}</p>
+          <p className={css.catalogTopText}>{rentalPrice}</p>
         </div>
         <ul className={css.catalogList}>
           <li className={css.catalogItem}>
@@ -69,27 +70,27 @@ export const CatalogItem = ({ car }) => {
             </p>
           </li>
           <li className={css.catalogItem}>
-            <p className={css.catalogItemText}>{car.address.split(' ')[4]}</p>
+            <p className={css.catalogItemText}>{address.split(' ')[4]}</p>
           </li>
           <li className={css.catalogItem}>
-            <p className={css.catalogItemText}>{car.rentalCompany}</p>
+            <p className={css.catalogItemText}>{rentalCompany}</p>
           </li>
           <li className={css.catalogItem}>
-            <p className={css.catalogItemText}>{car.type}</p>
+            <p className={css.catalogItemText}>{type}</p>
           </li>
 
           <li className={css.catalogItem}>
-            <p className={css.catalogItemText}>{car.model}</p>
+            <p className={css.catalogItemText}>{model}</p>
           </li>
           <li className={css.catalogItem}>
-            <p className={css.catalogItemText}>{car.mileage}</p>
+            <p className={css.catalogItemText}>{mileage}</p>
           </li>
           <li className={css.catalogItem}>
-            <p className={css.catalogItemText}>{car.engineSize}</p>
+            <p className={css.catalogItemText}>{engineSize}</p>
           </li>
         </ul>
         <Button
-          id={car.id}
+          id={id}
           handleClick={onInfoClick}
           type="button"
           text="Learn more"

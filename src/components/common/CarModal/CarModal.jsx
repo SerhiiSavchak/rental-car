@@ -9,6 +9,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 export const CarModal = ({ car }) => {
+	const {id,img, make, model, year, rentalPrice, accessories, functionalities, fuelConsumption, rentalConditions, address, type, mileage, engineSize ,description} = car;
+	
   const dispatch = useDispatch();
 
   const onHandleClick = e => {
@@ -67,73 +69,73 @@ export const CarModal = ({ car }) => {
             <img
               className={css.modalImg}
               loading="lazy"
-              src={car.img}
+              src={img}
               alt="car"
             />
             <div className={css.modalTopThumb}>
               <div className={css.modalTitleWrap}>
                 <h2 className={css.modalTopTitle}>
-                  {car.make}
-                  <span className={css.modalMakeSpan}> {car.model}</span>
-                  <span className={css.modalYearSpan}>, {car.year}</span>
+                  {make}
+                  <span className={css.modalMakeSpan}> {model}</span>
+                  <span className={css.modalYearSpan}>, {year}</span>
                 </h2>
               </div>
               <ul className={css.modalTopList}>
                 <li className={css.modalTopItem}>
                   <p className={css.modalTopText}>
-                    {car.address.split(' ')[3].slice(0, -1)}
+                    {address.split(' ')[3].slice(0, -1)}
                   </p>
                 </li>
                 <li className={css.modalTopItem}>
                   <p className={css.modalTopText}>
-                    {car.address.split(' ')[4]}
+                    {address.split(' ')[4]}
                   </p>
                 </li>
                 <li className={css.modalTopItem}>
-                  <p className={css.modalTopText}>{`Id: ${car.id}`}</p>
+                  <p className={css.modalTopText}>{`Id: ${id}`}</p>
                 </li>
                 <li className={css.modalTopItem}>
-                  <p className={css.modalTopText}>{`Year: ${car.year}`}</p>
+                  <p className={css.modalTopText}>{`Year: ${year}`}</p>
                 </li>
                 <li className={css.modalTopItem}>
-                  <p className={css.modalTopText}>{`Type: ${car.type}`}</p>
+                  <p className={css.modalTopText}>{`Type: ${type}`}</p>
                 </li>
 
                 <li className={css.modalTopItem}>
                   <p
                     className={css.modalTopText}
-                  >{`Fuel Consumption: ${car.fuelConsumption}`}</p>
+                  >{`Fuel Consumption: ${fuelConsumption}`}</p>
                 </li>
                 <li className={css.modalTopItem}>
                   <p
                     className={css.modalTopText}
-                  >{`Engine Size: ${car.engineSize}`}</p>
+                  >{`Engine Size: ${engineSize}`}</p>
                 </li>
               </ul>
             </div>
-            <p className={css.modalDescText}>{car.description}</p>
+            <p className={css.modalDescText}>{description}</p>
             <div className={css.modalThumb}>
               <h3 className={css.modalTitle}>
                 Accessories and functionalities:
               </h3>
               <ul className={css.modalList}>
                 <li className={css.modalItem}>
-                  <p className={css.modalText}>{car.accessories[0]}</p>
+                  <p className={css.modalText}>{accessories[0]}</p>
                 </li>
                 <li className={css.modalItem}>
-                  <p className={css.modalText}>{car.functionalities[0]}</p>
+                  <p className={css.modalText}>{functionalities[0]}</p>
                 </li>
                 <li className={css.modalItem}>
-                  <p className={css.modalText}>{car.accessories[1]}</p>
+                  <p className={css.modalText}>{accessories[1]}</p>
                 </li>
                 <li className={css.modalItem}>
-                  <p className={css.modalText}>{car.functionalities[1]}</p>
+                  <p className={css.modalText}>{functionalities[1]}</p>
                 </li>
                 <li className={css.modalItem}>
-                  <p className={css.modalText}>{car.accessories[2]}</p>
+                  <p className={css.modalText}>{accessories[2]}</p>
                 </li>
                 <li className={css.modalItem}>
-                  <p className={css.modalText}>{car.functionalities[2]}</p>
+                  <p className={css.modalText}>{functionalities[2]}</p>
                 </li>
               </ul>
             </div>
@@ -142,31 +144,31 @@ export const CarModal = ({ car }) => {
               <ul className={css.modalBottomList}>
                 <li className={css.modalBottomItem}>
                   <p className={css.modalBottomText}>
-                    {`${car.rentalConditions.split(' ')[0]} ${
-                      car.rentalConditions.split(' ')[1]
+                    {`${rentalConditions.split(' ')[0]} ${
+                      rentalConditions.split(' ')[1]
                     } `}{' '}
                     <span
                       className={css.modalBottomSpan}
-                    >{`${car.rentalConditions
+                    >{`${rentalConditions
                       .split(' ')[2]
                       .slice(0, 2)}`}</span>
                   </p>
                 </li>
                 <li className={css.modalBottomItem}>
                   <p className={css.modalBottomText}>
-                    {car.rentalConditions.slice(15, 39)}
+                    {rentalConditions.slice(15, 39)}
                   </p>
                 </li>
                 <li className={css.modalBottomItem}>
                   <p className={css.modalBottomText}>
-                    {car.rentalConditions.slice(39, -1)}
+                    {rentalConditions.slice(39, -1)}
                   </p>
                 </li>
                 <li className={css.modalBottomItem}>
                   <p className={css.modalBottomText}>
                     Mileage:{' '}
                     <span className={css.modalBottomSpan}>
-                      {convertNum(car.mileage)}
+                      {convertNum(mileage)}
                     </span>
                   </p>
                 </li>
@@ -175,7 +177,7 @@ export const CarModal = ({ car }) => {
                     Price:{' '}
                     <span className={css.modalBottomSpan}>
                       {' '}
-                      {car.rentalPrice}
+                      {rentalPrice}
                     </span>
                   </p>
                 </li>

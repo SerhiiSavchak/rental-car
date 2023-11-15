@@ -12,89 +12,11 @@ import { deleteCars, deleteCarResponse } from 'redux/car/carSlice';
 export const CatalogForm = () => {
   const dispatch = useDispatch();
 
-  const makesOptions = [
-    { value: 'All', label: 'All', className: css.dropDownOption },
-    { value: 'Buick', label: 'Buick', className: css.dropDownOption },
-    { value: 'Volvo', label: 'Volvo', className: css.dropDownOption },
-    { value: 'HUMMER', label: 'HUMMER', className: css.dropDownOption },
-    { value: 'Subaru', label: 'Subaru', className: css.dropDownOption },
-    { value: 'Mitsubishi', label: 'Mitsubishi', className: css.dropDownOption },
-    { value: 'Nissan', label: 'Nissan', className: css.dropDownOption },
-    { value: 'Lincoln', label: 'Lincoln', className: css.dropDownOption },
-    { value: 'GMC', label: 'GMC', className: css.dropDownOption },
-    { value: 'Hyundai', label: 'Hyundai', className: css.dropDownOption },
-    { value: 'MINI', label: 'MINI', className: css.dropDownOption },
-    { value: 'Bentley', label: 'Bentley', className: css.dropDownOption },
-    { value: 'Ford', label: 'Ford', className: css.dropDownOption },
-    { value: 'Toyota', label: 'Toyota', className: css.dropDownOption },
-    {
-      value: 'Volkswagen',
-      label: 'Volkswagen',
-      className: css.dropDownOption,
-    },
-    {
-      value: 'Skoda',
-      label: 'Skoda',
-      className: css.dropDownOption,
-    },
-    {
-      value: 'Honda',
-      label: 'Honda',
-      className: css.dropDownOption,
-    },
-    {
-      value: 'Mercedes-Benz',
-      label: 'Mercedes-Benz',
-      className: css.dropDownOption,
-    },
-    {
-      value: 'Aston Martin',
-      label: 'Aston Martin',
-      className: css.dropDownOption,
-    },
-    { value: 'Pontiac', label: 'Pontiac', className: css.dropDownOption },
-    {
-      value: 'Lamborghini',
-      label: 'Lamborghini',
-      className: css.dropDownOption,
-    },
-    { value: 'Audi', label: 'Audi', className: css.dropDownOption },
-    { value: 'BMW', label: 'BMW', className: css.dropDownOption },
-    { value: 'Chevrolet', label: 'Chevrolet', className: css.dropDownOption },
-    { value: 'Chrysler', label: 'Chrysler', className: css.dropDownOption },
-    { value: 'Kia', label: 'Kia', className: css.dropDownOption },
-    { value: 'Land', label: 'Land', className: css.dropDownOption },
-  ];
+const makesOptions = ["All",'Buick', 'Volvo', 'HUMMER','Subaru', 'Mitsubishi', 'Nissan', 'Lincoln', 'GMC', 'Hyundai', 'MINI', 'Bentley', 'Ford', 'Toyota', 'Volkswagen', 'Skoda', 'Honda',  'Mercedes-Benz', 'Aston Martin', 'Pontiac', 'Lamborghini', 'Audi',  'BMW',  'Chevrolet',  'Chrysler',  'Kia', 'Land' ].map(make => ({value: make, label:make, className: css.dropDownOption}))
 
-  const pricesOptions = [
-    { value: 'All', label: 'All', className: css.dropDownOption },
-    { value: '30', label: '30', className: css.dropDownOption },
-    { value: '40', label: '40', className: css.dropDownOption },
-    { value: '50', label: '50', className: css.dropDownOption },
-    { value: '60', label: '60', className: css.dropDownOption },
-    { value: '70', label: '70', className: css.dropDownOption },
-    { value: '80', label: '80', className: css.dropDownOption },
-    { value: '90', label: '90', className: css.dropDownOption },
-    { value: '100', label: '100', className: css.dropDownOption },
-    { value: '110', label: '110', className: css.dropDownOption },
-    { value: '120', label: '120', className: css.dropDownOption },
-    { value: '130', label: '130', className: css.dropDownOption },
-    {
-      value: '140',
-      label: '140',
-      className: css.dropDownOption,
-    },
-    {
-      value: '150',
-      label: '150',
-      className: css.dropDownOption,
-    },
-    { value: '160', label: '160', className: css.dropDownOption },
-    { value: '170', label: '170', className: css.dropDownOption },
-    { value: '180', label: '180', className: css.dropDownOption },
-    { value: '190', label: '190', className: css.dropDownOption },
-    { value: '200', label: '200', className: css.dropDownOption },
-  ];
+const pricesOptions = [ 'All', '30', '40', '50', '60', '70', '80', '90', '100', '110',  '120', '130', '140',  '150', '160', '170', '180', '190', '200',].map(make => ({value: make, label:make, className: css.dropDownOption}))
+
+
 
   const formInitialState = {
     rentalPrice: '',

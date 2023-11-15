@@ -9,8 +9,9 @@ import PropTypes from 'prop-types';
 
 export const CatalogList = ({ setPage  }) => {
   const carResponse = useSelector(getCarResponse);
-
+  
   const isLoading = useSelector(getCarsIsLoading);
+
   const cars = useSelector(getCars);
 
   const clientFilter = useSelector(getClientFilter);
